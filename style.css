@@ -1,350 +1,333 @@
-*{
-    padding:0;
-    margin:0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-img{
-    max-width: 100%;
-}
-body{
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+body {
     background-color: #000;
-    color:#fff;
+    color: #fff;
 }
-header{
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    padding: 26px 20px;
-    position:absolute;
+
+.header {
     width: 100%;
-    z-index: 5;
-}
-@media screen and (min-width:550px) {
-    header{
-        padding: 26px 56px;
-    }
-}
-
-header a.logo{
-    display: block;
-}
-header .logo svg{
-    fill: #e50914;
-    height: 27px;
-}
-@media screen and (min-width:550px) {
-    header .logo svg{
-        height: 37px;
-    }
-
-}
-header div+div {
-    text-align: right;
-}
-header a.button{
-    display: inline-block;
-    background-color: #e50914;
-    color: #fff;
-    text-decoration: none;
-    padding: 7px 17px;
-    border-radius: 3px;
-}
-header select{
-    background: transparent;
-    color:#fff;
-    padding: 6px 0 6px 20px;
-    border-radius: 3px;
-}
-header div.select{
-    display:inline-block;
-    margin-right: 10px;
-}
-@media screen and (min-width:550px) {
-    header div.select{
-        margin-right: 30px;
-    }
-}
-header div.select svg{
-    height:20px;
-    fill: #fff;
-    position:absolute;
-    margin-top:5px;
-    margin-left: 4px;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./Assets/header-image.png);
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position: relative;
 }
 
-div.splash{
-    position:relative;
-}
-div.splash div.gradient{
-    background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
-    position:absolute;
-    inset:0;
-}
-div.splash div.background{
-    position:absolute;
-    z-index:1;
-    inset:0;
-}
-div.splash div.background img{
-    height:100%;
-    opacity: 0.6;
-    object-fit: cover;
-}
-div.splash div.content{
-    padding: 95px 20px;
-    max-width: 655px;
-    margin: 0 auto;
-    display: grid;
+nav {
+    display: flex;
     align-items: center;
-    text-align: center;
-    position:relative;
-    z-index:3;
-}
-@media screen and (min-width:550px) {
-    div.splash div.content{
-        padding-top: 235px;
-        padding-bottom: 185px;
-    }
-}
-div.splash h1, div.splash h2, div.splash h3{
-    font-weight: normal;
-}
-div.splash h1{
-    font-size: 1.75rem;
-    font-weight: normal;
-}
-div.splash h2{
-    font-size: 1.125rem;
-    margin-top: 13px;
-    margin-bottom: 29px;
-}
-div.splash h3{
-    font-size: 1.125rem;
-}
-@media screen and (min-width: 550px) {
-    div.splash h1{
-        font-size: 3.125rem;
-        font-weight: bold;
-    }
-    div.splash h2{
-        font-size: 1.625rem;
-        margin-top: 13px;
-        margin-bottom: 29px;
-    }
-    div.splash h3{
-        font-size: 1.2rem;
-    }
+    justify-content: space-between;
+    padding: 10px 0;
 }
 
-div.cta form{
-    position:relative;
-    display:grid;
-    grid-template-columns: 1fr;
-    margin: 20px 20px 0;
-    row-gap: 15px;
-}
-@media screen and (min-width:550px) {
-    div.cta form{
-        display:grid;
-        grid-template-columns: 1fr max-content;
-    }
-}
-div.cta input{
-    padding: 15px 10px;
-    font-size:1.2rem;
-    width:100%;
-}
-div.cta input ~ span{
-    position:absolute;
-    left: 12px;
-    top:19px;
-    z-index: 3;
-    color:#aaa;
-    transition: all 0.15s ease;
-    pointer-events: none;
-}
-div.cta input:focus{
-    padding-top: 19px;
-    padding-bottom: 11px;
-}
-div.cta input:focus ~ span{
-    top: 4px;
-    font-size:.8rem;
-}
-div.cta button{
-    font-size: 1rem;
-    padding: 10px 16px;
-    background-color: #e50914;
-    border-radius:2px;
-    color: #fff;
-    border:0;
-}
-@media screen and (min-width:550px) {
-    div.cta button{
-        font-size:1.625rem;
-        padding: 12px 26px;
-        border-radius:0;
-    }
-}
-
-section{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 46px;
-    padding: 70px 35px;
-    align-items: center;
-    border-top: 8px solid #222;
-    text-align: center;
-}
-@media screen and (min-width:550px) {
-    section{
-        grid-template-columns: 1fr 1fr;
-        text-align: left;
-    }
-}
-section.last{
-    border-bottom: 8px solid #222;
-}
-section div.texts h1{
-    font-size: 1.625rem;
-    margin-bottom: 8px;
-}
-@media screen and (min-width:550px) {
-    section div.texts h1{
-        font-size: 3.125rem;
-    }
-}
-section div.texts p{
-    font-size: 1rem;
-}
-@media screen and (min-width:550px) {
-    section div.texts p{
-        font-size: 1.625rem;
-    }
-}
-.media{
-    position:relative;
-}
-
-.media.s1 img{
-    width: 400px;
-}
-.media.s1 video{
-    width: 72%;
-    position:absolute;
-    top:62px;
-    left:52px;
-    margin-left:-2%;
-    margin-top: -3%;
-}
-@media screen and (min-width:550px) {
-    section:nth-child(even) div.texts {
-        order: 2;
-    }
-}
-section div.download{
-    border: 2px solid #666;
-    border-radius: 15px;
-    padding: 10px;
-    height:95px;
-    display: grid;
-    text-align: center;
-    align-items: center;
-    position: absolute;
-    bottom: 20px;
-    width: 280px;
-    left: 50%;
-    margin-left: -140px;
-    background-color: #000;
-    gap: 15px;
-    grid-template-columns: max-content 1fr max-content;
-}
-section div.download img{
-    height: 75px;
-    width:auto;
-}
-
-.media.s3 img{
-    width: 400px;
-    position:relative;
-    z-index:5;
-}
-.media.s3 video{
-    width: 60%;
-    position:absolute;
-    top:36px;
-    left:82px;
-    margin-left: -3%;
-}
-
-div.faq{
-    padding: 70px 30px;
-}
-div.faq h1{
-    font-size: 1.625rem;
-    text-align: center;
-    margin-bottom: 40px;
-}
-@media screen and (min-width:550px) {
-    div.faq h1{
-        font-size: 3.125rem;
-    }
-}
-div.questions{
-    max-width:635px;
-    margin: 0 auto;
-    font-size: 1rem;
-}
-@media screen and (min-width:550px) {
-    div.questions{
-        font-size: 1.625rem;
-    }
-}
-div.question{
-    position:relative;
-    background-color: #303030;
-    margin-bottom: 10px;
-}
-div.question svg{
-    width: 30px;
-    height: 30px;
-    right:30px;
-    top:20px;
-    position:absolute;
-    transform: rotate(45deg);
-    transition: all 0.2s ease;
-}
-div.question .header{
-    display:block;
-    padding: 20px 30px;
-    border-bottom: 1px solid #000;
+.logo {
+    width: 150px;
     cursor: pointer;
 }
-div.question div.answer{
-    padding: 0 30px;
-    max-height:0;
-    overflow: hidden;
-    transition: all 0.2s ease;
+
+nav button {
+    border: none;
+    outline: none;
+    background-color: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
 }
-div.question input[type="checkbox"]{
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+}
+
+.lang-btn img {
+    width: 10px;
+    margin-left: 10px;
+} 
+
+.fa-globe {
+    color: #fff;
+    width: 10px;
+    margin-right: 10px;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.header-content h1 {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 650px;
+}
+
+.header-content h3 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.email-signup {
+    background: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.email-signup input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+}
+
+.email-signup button {
+    background-color: #db0001;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+}
+
+
+/* -----features----- */
+
+.features {
+    padding: 50px 12%;
+    font-size: 22px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.text-col, .img-col {
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+
+.img-col img {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.features h2 {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* -----FAQ's----- */
+.faq {
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.faq h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.accordion {
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+label::after {
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+
+input[type="radio"] {
     display: none;
 }
-div.question input[type="checkbox"]:checked ~ div.answer{
-    padding: 30px 30px;
-    max-height:600px;
+
+.accordion .content {
+    background-color: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
 }
-div.question input[type="checkbox"]:checked ~ .header svg{
-    transform: rotate(180deg);
+
+.accordion input[type="radio"]:checked + label + .content {
+    max-height: 600px;
+    padding: 30px 20px;
 }
-div.faq h3{
-    font-weight: normal;
-    text-align: center;
-    margin: 40px 0 20px;
+
+.accordion input[type="radio"]:checked + label::after {
+    transform: rotate(135deg);
 }
-div.faq form{
-    max-width:635px;
-    margin: 0 auto;
+
+.faq small {
+    font-size: 13px;
 }
-div.faq form div + div{
-    text-align: center;
+
+.faq .email-signup {
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+
+/* -----footer----- */
+.footer {
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+}
+
+.footer h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.footer .col {
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.footer .col a {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.footer .row {
+    align-items: flex-start;
+    padding: 10px 0px;
+}
+
+.footer .lang-btn {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+.copyright-text {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* media-queries */
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 100px;
+    }
+
+    nav button {
+        padding: 5px 10px;
+    }
+
+    nav .lang-btn {
+        padding: 4px 8px;
+    }
+
+    .header-content {
+        position: unset;
+        transform: none;
+        padding-top: 150px;
+    }
+
+    .header-content h1 {
+        font-size: 30px;
+    }
+
+    .email-signup button {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .text-col, .img-col {
+        flex-basis: 100%;
+    }
+
+    .features h2 {
+        font-size: 30px;
+    }
+
+    .features p {
+        font-size: 15px;
+    }
+
+    .row:nth-child(2), .row:nth-child(4) {
+        flex-direction: column-reverse;
+    }
+
+    .features .row {
+        padding: 10px 0;
+    }
+
+    .faq h2 {
+        font-size: 20px;
+    }
+
+    .accordion .content {
+        font-size: 14px;
+    }
+
+    .accordion li label {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    label::after {
+        font-size: 22px;
+    }
 }
